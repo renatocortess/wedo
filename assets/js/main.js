@@ -15,13 +15,39 @@ var sticky = $('.header-sticky');
 
 windows.on('scroll', function () {
     var scroll = windows.scrollTop();
-    if (scroll < 300) {
-        sticky.removeClass('is-sticky');
+    if (scroll < 100) {
+        sticky.addClass('is-sticky');
     } else {
         sticky.addClass('is-sticky');
     }
 });
    
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    if (index >= slides.length) currentIndex = 0;
+    if (index < 0) currentIndex = slides.length - 1;
+
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === currentIndex) ? 'block' : 'none';
+    });
+}
+
+document.getElementById('prev-btn').addEventListener('click', () => {
+    currentIndex--;
+    showSlide(currentIndex);
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+    currentIndex++;
+    showSlide(currentIndex);
+});
+
+// Inicializa o carrossel
+showSlide(currentIndex);
+
 /*--- 
     Clickable menu active 
 -------------------------------*/

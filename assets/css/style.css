@@ -53,10 +53,10 @@ body {
   background-color: #191919;
 }
 .header{
-  background-color: #191919;
+  background-color: #dedddd;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #1d2736;
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   margin-top: 0;
@@ -167,12 +167,16 @@ a:focus {
   position: absolute;
   top: 0;
   width: 100%;
-  background: #191919;
+  background: #a5a5a5;
   z-index: 999;
   position: fixed;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: top 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
+
+
+
+
 
 .boxed-layout .is-sticky {
   max-width: 1400px !important;
@@ -201,9 +205,7 @@ a:focus {
   }
 }
 
-.is-sticky .header-top {
-  display: none;
-}
+
 
 .is-sticky .cuscol {
   padding: 19px 0;
@@ -832,7 +834,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   right: 20px;
   bottom: 60px;
   text-align: center;
-  overflow: hidden;
+  transition: 0.3s;
+  
   border-radius: 50px;
   z-index: 9811 !important;
 }
@@ -1050,6 +1053,152 @@ img.mfp-img {
   overflow: visible;
 }
 
+/* Container para centralizar o card */
+#certificate-container {
+  width: 100%;
+  height: 100vh; /* Altura total da viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo do card */
+#certificate-card {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Cabeçalho do certificado */
+#certificate-header {
+  background-color: #6b0a02;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 12px 12px 0 0;
+}
+
+#certificate-header h2 {
+  font-size: 1.5rem;
+}
+
+/* Conteúdo do certificado */
+#certificate-content {
+  padding: 20px;
+}
+
+#certificate-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Texto do certificado */
+#certificate-text p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Botão de download */
+#certificate-button {
+  text-align: center;
+}
+
+#download-btn {
+  text-decoration: none;
+  background-color: #3a3a3a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#download-btn:hover {
+  background-color: #357ab8;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+  #certificate-card {
+      max-width: 500px;
+  }
+}
+
+
+#carousel-container {
+  position: relative;
+  max-width: 60%; /* Altere conforme necessário */
+  margin: 40px auto; /* Centraliza horizontalmente */
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centraliza o carrossel */
+}
+
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* Define a largura total do carrossel */
+}
+
+.carousel-item {
+  min-width: 70%; /* Cada item ocupa 100% do contêiner */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#prev-btn,
+#next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #7b1213;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+#prev-btn {
+  left: 10px;
+}
+
+#next-btn {
+  right: 10px;
+}
+
+/* Estilização para dispositivos móveis */
+@media (max-width: 600px) {
+  #prev-btn,
+  #next-btn {
+      padding: 8px;
+      font-size: 16px;
+  }
+}
+
+
+
+/* Estilização para dispositivos móveis */
+@media (max-width: 600px) {
+  #prev-btn,
+  #next-btn {
+      padding: 8px;
+      font-size: 16px;
+  }
+}
 /*--
     - Product Full Width
 ------------------------------------------*/
@@ -1716,21 +1865,17 @@ img.mfp-img {
   padding: 20px 0;
 }
 
-@media only screen and (max-width: 767px) {
-  .header-transparant {
-    position: inherit;
-    background: #333;
-    padding: 0px 0;
-  }
-}
+
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   .logo {
     
     margin: 15px 0;
+    margin-left: 55%;
+    
   }
 }
 .logo{
-  width:120px;
+  width:100px;
 }
 
 /*--
@@ -2034,6 +2179,74 @@ color: $theme-color;*/
 .slick-active .hero-content > *:nth-child(6) {
   animation-delay: 3s;
 }
+
+
+
+
+
+
+
+
+
+/* Estilos para o vídeo da seção de serviços */
+.service-video {
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: auto; /* Mantém a proporção do vídeo */
+  border-radius: 10px; /* Bordas arredondadas para harmonizar com o design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o vídeo */
+  margin-bottom: 20px; /* Espaço abaixo do vídeo */
+  background-color: #000; /* Fundo preto enquanto o vídeo carrega */
+}
+
+/* Estilos adicionais para alinhar com o design */
+.section-title h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #777;
+}
+
+.service {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service .icons {
+  font-size: 40px;
+  color: #ff5722;
+  margin-bottom: 15px;
+}
+
+.service .content h4 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service .content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.section-service .thumb .service-video {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color: #000;
+}
+
+
+
+
 
 /*--
     04. Service Css
@@ -2339,6 +2552,7 @@ color: $theme-color;*/
   max-width: 400px;
 }
 
+
 .form-style-1 form input, .form-style-1 form textarea {
   background: transparent;
   height: 55px;
@@ -2532,7 +2746,7 @@ color: $theme-color;*/
   width: 100%;
 }
 .form-style-7 form textarea:focus {
-  border: 1px solid #fb5b21;
+  border: 1px solid #040404;
 }
 
 input, textarea {
@@ -2602,6 +2816,28 @@ input, textarea {
   .event-form .event-tab-content a {
     flex-basis: 50%;
   }
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }
 .event-form .event-tab-content a span {
   display: block;
@@ -2620,22 +2856,144 @@ input, textarea {
   font-weight: 700;
 }
 .event-form .event-tab-content a.active {
+  display: block;
+  width: max-content; /* Ajuste a largura ao conteúdo */
+  margin: 0 auto;
+  margin-bottom: 18px;
   background: #1e1d1d;
 }
+
 .event-form .event-tab-content a.active span {
   color: #ffffff;
 }
 .event-form .event-tab-content a.active span.day {
   color: #ffffff;
 }
-
-.ht-event-table-style table thead th {
-  background: #c77ba6 !important;
-  color: #fff;
-  font-size: 18px;
-  border-right: 1px solid #dbdbdb;
+.day-01 {
   text-align: center;
+  color: #fff;
 }
+
+
+/* Estilos específicos para a seção de post carousel */
+.section-post-carousel {
+  padding: 60px 0;
+  background-color: #333; /* Cor de fundo cinza escuro */
+}
+
+.section-post-carousel .section-title h2 {
+  font-size: 34px;
+  color: #fff; /* Título em branco */
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-post-carousel .section-title p {
+  font-size: 16px;
+  color: #b3b3b3; /* Texto do parágrafo em cinza claro */
+  margin-bottom: 30px;
+}
+
+.section-post-carousel .post-carousel {
+  background: #fffdfd; /* Fundo do card em cinza escuro */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada e escura */
+  border-radius: 12px; /* Bordas levemente arredondadas */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.section-post-carousel .post-carousel:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); /* Sombra mais intensa ao hover */
+}
+
+.section-post-carousel .post-carousel .thumb img {
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.section-post-carousel .post-carousel:hover .thumb img {
+  transform: scale(1.05); /* Leve zoom na imagem ao hover */
+}
+
+.section-post-carousel .ptc-content {
+  padding: 25px;
+}
+
+.section-post-carousel .ptc-content .meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0; /* Maior espaçamento abaixo da meta */
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #b3b3b3; /* Texto em cinza claro */
+}
+
+.section-post-carousel .ptc-content .meta li {
+  display: flex;
+  align-items: center;
+}
+
+.section-post-carousel .ptc-content h2 a {
+  font-size: 26px;
+  color: #fff; /* Título do post em branco */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.section-post-carousel .ptc-content h2 a:hover {
+  color: #e6e1e1; /* Cor vermelha ao hover */
+}
+
+.section-post-carousel .ptc-content p {
+  font-size: 16px;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+/* Estilos para o botão "Saiba Mais" */
+.section-post-carousel .post-btn {
+  text-align: center; /* Centraliza o botão */
+  margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+.section-post-carousel .post-btn .readmore-btn {
+  background: #6c757d; /* Cor neutra (cinza claro) que combina com preto e cinza */
+  color: #fff; /* Texto em branco */
+  padding: 12px 25px;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Garante que o botão se comporte como um bloco inline */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.section-post-carousel .post-btn .readmore-btn:hover {
+  background: #495057; /* Cor cinza escuro para hover */
+  transform: translateY(-3px); /* Leve elevação ao hover */
+}
+
+
+@media (max-width: 768px) {
+  .section-post-carousel .section-title h2 {
+      font-size: 28px; /* Ajuste do tamanho do título em telas menores */
+  }
+
+  .section-post-carousel .ptc-content h2 a {
+      font-size: 22px; /* Ajuste do tamanho do título do post */
+  }
+
+  .section-post-carousel .post-btn .readmore-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+  }
+}
+
 .ht-event-table-style table tbody tr th {
   border-right: 1px solid #dbdbdb;
 }
@@ -2802,6 +3160,150 @@ input, textarea {
   border: 1px solid #fb5b21;
 }
 
+
+
+
+
+/* styles.css */
+
+#h1-venda{
+  color: #fff;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.card-header p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.card-body p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.tickets {
+  margin-top: 20px;
+}
+
+.buy-button {
+  background-color: #e0e0e0;
+  color: #1f1f1f;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+  transition: background-color 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                color 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+}
+
+.wel-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.styled-button {
+  background-color: #444;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.styled-button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  color: #ffdd57; /* Para adicionar um destaque de cor ao texto no hover */
+}
+
+.buy-button:hover {
+  background-color: #333;
+  color: #000000;
+  padding: 19px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tickets p {
+  font-weight: bold;
+}
+
+.tickets ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tickets li {
+  margin-bottom: 5px;
+}
+
+.card-footer {
+  background-color: #333;
+  text-align: center;
+  padding: 15px;
+}
+
+.buy-button {
+  background-color: #e0e0e0;
+  color: #1f1f1f;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #cccccc;
+}
+
+
+
 /*--
     08. Blog Css
 ---------------------------*/
@@ -2897,11 +3399,11 @@ input, textarea {
   font-size: 14px;
   transition: 0.4s ease-in-out;
   font-family: "Montserrat", sans-serif;
-  color: #333333;
+  color: #f7f7f7;
 }
 .post-carousel-5 .ptc-content .content .post-btn a.readmore-btn:hover {
-  border-bottom: 1px solid #fb5b21;
-  color: #fb5b21;
+  border-bottom: 1px solid #f8f8f8;
+  color: #fffefd;
 }
 .post-carousel-5.cleaning-post .ptc-content .content h2 a:hover {
   color: #fb5b21;
@@ -3128,14 +3630,8 @@ input, textarea {
     12. Footer Css
 ----------------------*/
 /* CopyiRight Style */
-.copyright {
-  background: #f1f1f1;
-  padding: 30px 0;
-}
-.copyright .content p {
-  color: #333;
-  font-size: 14px;
-  margin: 10px 0;
-}
+/* CSS específico para o rodapé */
+
+
 
 /*# sourceMappingURL=style.css.map */
